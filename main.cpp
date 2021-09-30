@@ -352,6 +352,7 @@ int main()
 	break;
 	case 4:
 	system("cls");
+	cout<<"Size= "<<listas.size()<<"\n";
 	cout<<"Position can go over the size and will loop\n";
 	cout<<"Position that is equel to the size will be added to the end\n";
 	cout<<"Position 1 will be added to the start\n";
@@ -374,6 +375,7 @@ int main()
 	break;
 	case 7:
 	system("cls");
+	cout<<"Size= "<<listas.size()<<"\n";
 	cout<<"Position can go over the size and will loop\n";
 	cout<<"Position that is equel to the size will be deleted at the end\n";
 	cout<<"Position 1 will deleted at the start\n";
