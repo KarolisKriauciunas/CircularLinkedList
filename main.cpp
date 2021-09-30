@@ -199,6 +199,7 @@ class linkedList
 		for(int i = 1; i<=Size;i++)
 		{
 		if(cur->data == value)return i;	
+		cur=cur->next;
 		} 
 		return -1;
 		}
@@ -242,7 +243,7 @@ class linkedList
         }
 		}
 };
-void printMeniuBar(linkedList list)
+void printMeniuBar(linkedList &list)
 {
 	cout<<"CIRCULAR LINKEDLIST COMMAND MENIU \t Size = "<<list.size()<<"\n\n";
 	cout<<"COMMANDS: \n\n";
@@ -277,7 +278,7 @@ int inputValue()
 	}
 
 }
-void optionSearch(linkedList list)
+void optionSearch(linkedList &list)
 {
 system("cls");
 int option;
@@ -286,7 +287,7 @@ cout<<"1 Check if the value exists in the list\n";
 cout<<"2 Check in what position is the value (-1 means it doesnt exist)\n";
 cout<<"INPUT : ";
 cin>>option;
-cout<<"\n Input the value you want to check: ";
+cout<<"\nInput the value you want to check: ";
 int value;
 cin>>value;
 	switch(option)
@@ -297,7 +298,7 @@ cin>>value;
 	system("pause");
 	break;
 	case 2:
-	cout<<list.searchPos(value);
+	cout<<"Position: "<<list.searchPos(value)<<endl;
 	system("pause");
 	break;
 	default:cout<<"BAD INPUT";
@@ -328,7 +329,7 @@ int main()
 {
 	linkedList listas;
 	int position;
-	while(1)
+while(1)
 	{
 	system("CLS");
 	printMeniuBar(listas);
@@ -398,7 +399,7 @@ int main()
 	break;
 	default: exit(0); 
 	}
-
+	
 	}
 	return 0;
 }
