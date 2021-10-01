@@ -66,6 +66,7 @@ class linkedList
 			if(IsEmpty())
 			{
 				cout<<"EMPTY\n";
+				system("pause");
 				return ;
 			}
 			else
@@ -86,6 +87,7 @@ class linkedList
 			if(IsEmpty())
 			{
 				cout<<"EMPTY\n";
+				system("pause");
 				return ;
 			}
 			else
@@ -103,6 +105,11 @@ class linkedList
 		}
 		void deleteNodePosition(int position)
 		{
+			if(Size == 0)
+			{
+				deleteNodeStart();
+				return;	
+			}
 			position %=Size;
 			if (position == 1)
 			{
@@ -127,11 +134,17 @@ class linkedList
 				for(int i = 0; i <position-2;i++)before=before->next;
 				before->next = after;
 				delete cur;
+				Size--;
 			}
 
 		}
 		void addNodePosition(int position, int value)
 		{
+			if(Size == 0)
+			{
+				addNodeStart(value);
+				return;	
+			}
 			position %=Size;
 			if (position == 1)
 			{
@@ -304,7 +317,7 @@ cin>>value;
 	default:cout<<"BAD INPUT";
 	}
 }
-void optionreverse(linkedList list)
+void optionreverse(linkedList &list)
 {
 system("cls");
 int option;
@@ -329,8 +342,8 @@ int main()
 {
 	linkedList listas;
 	int position;
-while(1)
-	{
+ while(1)
+ 	{
 	system("CLS");
 	printMeniuBar(listas);
 	int answer;
@@ -376,7 +389,7 @@ while(1)
 	break;
 	case 7:
 	system("cls");
-	cout<<"Size= "<<listas.size()<<"\n";
+	cout<<"Size = "<<listas.size()<<"\n";
 	cout<<"Position can go over the size and will loop\n";
 	cout<<"Position that is equel to the size will be deleted at the end\n";
 	cout<<"Position 1 will deleted at the start\n";
@@ -399,8 +412,16 @@ while(1)
 	break;
 	default: exit(0); 
 	}
-	
+
 	}
+/* 	listas.addNodeStart(1);
+	listas.addNodeEnd(2);
+	listas.addNodePosition(5,3);
+	listas.display();
+	system("Pause");
+	listas.reversePointers();
+	listas.display();
+	system("Pause"); */
 	return 0;
 }
 
