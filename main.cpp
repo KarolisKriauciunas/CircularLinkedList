@@ -223,6 +223,7 @@ class linkedList
 		}
 		void reversePointers()
 		{
+		if(IsEmpty())return;
 		node *cur = tail;
         node *before=tail;
 		node *after = NULL;
@@ -240,6 +241,7 @@ class linkedList
 		};
 		void reverseStack()
 		{
+		if(IsEmpty())return;
 		stack<int> stack;
         node* cur;
         cur = tail;
