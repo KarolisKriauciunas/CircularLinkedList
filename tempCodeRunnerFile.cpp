@@ -221,7 +221,6 @@ class linkedList
 		{
 			while(!IsEmpty())
 			{deleteNodeEnd();}
-			tail = NULL;
 		}
 		void reversePointers()
 		{
@@ -414,10 +413,7 @@ int main()
 	case 9:
 	optionreverse(listas);
 	break;
-	default: 
-	listas.clear();
-	exit(0); 
-
+	default: exit(0); 
 	}
 
 	}
